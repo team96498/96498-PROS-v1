@@ -11,10 +11,10 @@ pinMode(1, OUTPUT); //configures digital port 1 as output
   /*user code*/
 //}
 void initialize() {
-  FQuad = encoderInit(FQUAD_TOP_PORT, FQUAD_BOTTOM_PORT, false);
-  LQuad = encoderInit(LQUAD_TOP_PORT, LQUAD_BOTTOM_PORT, false);
-  RQuad = encoderInit(RQUAD_TOP_PORT, RQUAD_BOTTOM_PORT, false);
-  
+  FQuad = encoderInit(FQuad_Top, FQuad_Bottom, false);
+  LQuad = encoderInit(LQuad_Top, LQuad_Bottom, false);
+  RQuad = encoderInit(RQuad_Top, RQuad_Bottom, false);
+
 
 
 

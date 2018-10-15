@@ -86,7 +86,7 @@ void calculateVelocity(void* ignoreMe);
 void PIDF(void* ignoreMe);
 //everything above this is just configuration for PID Control/Regulations/Tasks
 void autonomous() {
-	if(analogRead(POTENTIOMETER_PORT) <= 4095 && analogRead(POTENTIOMETER_PORT) > 2048) //dial at the bottom
+	if(analogRead(Potentiometer) <= 4095 && analogRead(Potentiometer) > 2048) //dial at the bottom
   {
   	pid = 0;
 		//startTask(autoTurn);
@@ -124,7 +124,7 @@ void autonomous() {
 		delay(100);
 		taskDelete(autoDriveHandle);
   }
-	if(analogRead(POTENTIOMETER_PORT) >= 0 && analogRead(POTENTIOMETER_PORT) < 2040) //dial at the top
+	if(analogRead(Potentiometer) >= 0 && analogRead(Potentiometer) < 2040) //dial at the top
   {
   	pid = 0;
 		//startTask(autoTurn);

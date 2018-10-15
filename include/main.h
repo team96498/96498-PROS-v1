@@ -11,20 +11,6 @@
 extern "C" {
 #endif
 
-#define FQUAD_TOP_PORT 1
-#define FQUAD_BOTTOM_PORT 2
-
-#define LQUAD_TOP_PORT 3
-#define LQUAD_BOTTOM_PORT 4
-
-#define RQUAD_TOP_PORT 5
-#define RQUAD_BOTTOM_PORT 6
-
-#define POTENTIOMETER_PORT 1
-
-Encoder FQuad;
-Encoder LQuad;
-Encoder RQuad;
 
 int firstSample;
 int secondSample;
@@ -38,6 +24,21 @@ float f_minPower;
 float f_previousError;
 float f_targetVelocity;
 float currentVelocity;
+
+enum SENSOR_CONFIG
+{
+	FQuad_Top = 1,
+	FQuad_Bottom = 2,
+	LQuad_Top = 3,
+	LQuad_Bottom = 4,
+	RQuad_Top = 5,
+	RQuad_Bottom = 6,
+	Potentiometer = 1
+};
+
+Encoder FQuad;
+Encoder LQuad;
+Encoder RQuad;
 
 enum MOTOR_CONFIG
 {
