@@ -10,7 +10,7 @@ void calculateVelocity(void* ignoreMe)
 	while(true)
 	{
 		firstSample = encoderGet(FQuad);
-		wait(0.1);
+		wait(100);
 		secondSample = encoderGet(FQuad);
 		currentVelocity = secondSample - firstSample;
 		encoderReset(FQuad);
