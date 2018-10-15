@@ -48,13 +48,13 @@ enum MOTOR_CONFIG
 	m_LDFront = 6, //needs to be confirmed
 	m_LDBack = 7, //needs to be confirmed
 	m_RDFront = 5, //needs to be confirmed
-	m_RDBack = 4, //needs to be confirmed
+	m_RDBack = 4 //needs to be confirmed
 };
 
 enum JOYSTICK_CONFIG
 {
 	j_Main = 1,
-	j_Partner = 2,
+	j_Partner = 2
 };
 
 

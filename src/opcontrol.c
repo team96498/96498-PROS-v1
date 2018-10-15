@@ -10,7 +10,7 @@ void calculateVelocity(void* ignoreMe)
 	while(true)
 	{
 		firstSample = encoderGet(FQuad);
-		wait(0.1);
+		wait(100);
 		secondSample = encoderGet(FQuad);
 		currentVelocity = secondSample - firstSample;
 		encoderReset(FQuad);
@@ -70,6 +70,7 @@ void operatorControl() {
 		//digitalWrite(1, LOW); //HIGH or LOW to port 1 in place of LOW
 		//Set this to a command, right now it's just ere cuz can
 		//delay(20);
+
 		TaskHandle PIDFHandle;
 		if(joystickGetDigital(1, 6, JOY_UP)) //Flywheel On
 				{
