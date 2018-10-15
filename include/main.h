@@ -25,14 +25,18 @@ float f_previousError;
 float f_targetVelocity;
 float currentVelocity;
 
-enum SENSOR_CONFIG
+enum SENSOR_DIGITAL_CONFIG
 {
 	FQuad_Top = 1,
 	FQuad_Bottom = 2,
 	LQuad_Top = 3,
 	LQuad_Bottom = 4,
 	RQuad_Top = 5,
-	RQuad_Bottom = 6,
+	RQuad_Bottom = 6
+};
+
+enum SENSOR_ANALOG_CONFIG
+{
 	Potentiometer = 1
 };
 

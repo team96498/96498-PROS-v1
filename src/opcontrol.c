@@ -22,13 +22,13 @@ void operatorControl() {
 		//delay(20);
 
 		TaskHandle PIDFHandle;
-		if(joystickGetDigital(1, 6, JOY_UP)) //Flywheel On
+		if(joystickGetDigital(j_Main, 6, JOY_UP)) //Flywheel On
 				{
 					PIDFHandle = taskCreate(PIDF, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_HIGHEST);
 					f_minPower = 80;
 					f_targetVelocity = 600;
 				}
-		if(joystickGetDigital(1, 6, JOY_DOWN)) // Flywheel Off
+		if(joystickGetDigital(j_Main, 6, JOY_DOWN)) // Flywheel Off
 				{
 					motorSet(m_Flywheel, 0);
 					f_minPower = 0;
@@ -40,19 +40,19 @@ void operatorControl() {
 					  //we multiply by 0.88 as the max stress a motor can take is 88% full power, and 127% will just
 					  //burn out the motor, so this value is good for moderation, PROS however only accepts int values for motors and this is a float,
 						//this means the efficiency will be slightly impacted.
-						motorSet(m_LDFront, joystickGetAnalog(1, 2) + joystickGetAnalog(1, 1)*0.88 ); //7
-						motorSet(m_LDBack, joystickGetAnalog(1, 2) - joystickGetAnalog(1, 1)*0.88); //6
-						motorSet(m_RDFront, joystickGetAnalog(1, 2) + joystickGetAnalog(1, 1)*0.88); //5
-						motorSet(m_RDBack, joystickGetAnalog(1, 2) - joystickGetAnalog(1, 1)*0.88); //4
+						motorSet(m_LDFront, joystickGetAnalog(j_Main, 2) + joystickGetAnalog(j_Main, 1)*0.88 ); //7
+						motorSet(m_LDBack, joystickGetAnalog(j_Main, 2) - joystickGetAnalog(j_Main, 1)*0.88); //6
+						motorSet(m_RDFront, joystickGetAnalog(j_Main, 2) + joystickGetAnalog(j_Main, 1)*0.88); //5
+						motorSet(m_RDBack, joystickGetAnalog(j_Main, 2) - joystickGetAnalog(j_Main, 1)*0.88); //4
 						//IF ROBOT FRONT IS INCORRECT CHANGE LB AND LF AS WELL AS RB AND RF
 						// RE-DO ARCADE CONTROL BEFORE BRAIN ANEURYSM
 
 
-				 if(joystickGetDigital(1,8, JOY_UP))
+				 if(joystickGetDigital(j_Main,8, JOY_UP))
 						{
 							digitalWrite(1, HIGH); //write LOW to port 1 (Solenoid may be extended or retracted, set to HIGH to reverse)
 						}
-				 if(joystickGetDigital(1,8, JOY_DOWN))
+				 if(joystickGetDigital(j_Main,8, JOY_DOWN))
 						{
 							digitalWrite(1, LOW); //write LOW to port 1 (Solenoid may be extended or retracted, set to HIGH to reverse)
 						}
@@ -60,11 +60,11 @@ void operatorControl() {
 
 
 
-					if(joystickGetDigital(1, 7, JOY_UP)) //Intake
+					if(joystickGetDigital(j_Main, 7, JOY_UP)) //Intake
 						{
 							motorSet(m_Intake, 100); //Power is set to be less in intake than detake, so cap flipping is possible but ball clogging is not.
 						}
-					else if(joystickGetDigital(1, 7, JOY_DOWN)) //Intake
+					else if(joystickGetDigital(j_Main, 7, JOY_DOWN)) //Intake
 						{
 							motorSet(m_Intake, -127);
 						}
@@ -75,11 +75,11 @@ void operatorControl() {
 
 
 
-					if(joystickGetDigital(1, 5, JOY_DOWN)) //Arms
+					if(joystickGetDigital(j_Main, 5, JOY_DOWN)) //Arms
 						{
 							motorSet(m_Lift, -100);
 						}
-					else if(joystickGetDigital(1, 5, JOY_UP)) //Arms
+					else if(joystickGetDigital(j_Main, 5, JOY_UP)) //Arms
 						{
 							motorSet(m_Lift, 100);
 						}
@@ -90,11 +90,11 @@ void operatorControl() {
 
 
 
-					if(joystickGetDigital(1, 8, JOY_LEFT)) //RPI
+					if(joystickGetDigital(j_Main, 8, JOY_LEFT)) //RPI
 						{
 							motorSet(m_RPI, 100);
 						}
-					else if(joystickGetDigital(1, 8, JOY_RIGHT)) //RPI
+					else if(joystickGetDigital(j_Main, 8, JOY_RIGHT)) //RPI
 						{
 							motorSet(m_RPI, -100);
 						}
