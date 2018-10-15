@@ -1,6 +1,7 @@
 
 
 #include "main.h"
+#include "PIDF.h"
 
 int RDerror;
 int RDintegral;
@@ -80,11 +81,7 @@ void autoDrive(void* ignoreMe) {
 	}
 }
 
-void calculateVelocity(void* ignoreMe);
 
-//IF ANYTHING GOES WRONG CHECK THE TASKHANDLE DELETE AT THE BOTTOM OF VOID PIDF
-void PIDF(void* ignoreMe);
-//everything above this is just configuration for PID Control/Regulations/Tasks
 void autonomous() {
 	if(analogRead(Potentiometer) <= 4095 && analogRead(Potentiometer) > 2048) //dial at the bottom
   {
