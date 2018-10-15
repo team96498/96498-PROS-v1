@@ -80,10 +80,19 @@ void autoDrive(void* ignoreMe) {
 	}
 }
 
+<<<<<<< HEAD
 void calculateVelocity(void* ignoreMe);
 //IF ANYTHING GOES WRONG CHECK THE TASKHANDLE DELETE AT THE BOTTOM OF VOID PIDF
 void PIDF(void*ignoreMe);
 
+=======
+
+void calculateVelocity(void* ignoreMe);
+
+//IF ANYTHING GOES WRONG CHECK THE TASKHANDLE DELETE AT THE BOTTOM OF VOID PIDF
+void PIDF(void* ignoreMe);
+//everything above this is just configuration for PID Control/Regulations/Tasks
+>>>>>>> 66456a0d5eeae9646f1d9cb099581df41625b4aa
 void autonomous() {
 	if(analogRead(POTENTIOMETER_PORT) <= 4095 && analogRead(POTENTIOMETER_PORT) > 2048) //dial at the bottom
   {
